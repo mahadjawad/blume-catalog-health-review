@@ -1,0 +1,35 @@
+title,vendor,product_type,price_min,on_sale,fully_out_of_stock,discount_pct,risk_status
+Amazon Prime Day PR Kit,blume-box,Skin Care,175.0,0,0,,Healthy
+Blume's 8th Birthday PR Kit,blume-box,Skin Care,200.0,0,0,,Healthy
+Ulta Beauty PR Kit,blume-box,Skin Care,175.0,0,0,,Healthy
+Blume's 8th Birthday Party: In Full Blume,Blume,Event,55.0,0,1,,Critical - Out of Stock
+Clear Skin Kit PR Kit,blume-box,Skin Care,85.0,0,0,,Healthy
+Meltdown Daily Balancing Gel Cleanser,blume-box,Skin Care,86.4,1,0,55.0,High Risk - Deep Discount
+Blume Buddy Bag Charm Blind Box,blume-box,Skin Care,11.0,0,1,,Critical - Out of Stock
+Meltdown Acne Oil Treatment,blume-box,Unlisted,52.0,1,0,83.3,High Risk - Deep Discount
+Meltdown Acne Oil Treatment,blume-box,Unlisted,52.0,0,0,,Healthy
+Glow & Fade Kit,Blume,Bundle,66.4,1,0,20.0,Watch - On Sale
+Calming Hydration Kit,Blume,Bundle,51.2,1,0,20.0,Watch - On Sale
+Glass Skin Kit,Blume,Bundle,88.8,1,1,20.0,Critical - Out of Stock
+Pearl Drip Soothing + Hydration Milky Toner,blume-box,Skin Care,36.0,0,0,,Healthy
+Hydration Heroes Kit,Blume,Bundle,38.4,1,1,20.0,Critical - Out of Stock
+24 Superbalm Bubblegum,Blume,Unlisted,480.0,0,0,,Healthy
+Fresh Face Edit,Blume,Bundle,55.0,1,1,30.4,Critical - Out of Stock
+The Ultimate Clear Skin Edit,Blume,Bundle,95.0,1,0,50.5,High Risk - Deep Discount
+Superbalm Tripeptide-1 Lip Tint in Wild Plum,blume-box,Skin Care,20.0,0,0,,Healthy
+Blume Lip Balm Trio Kit,Blume,Bundle,40.0,1,0,33.3,Watch - On Sale
+Milky Fade Serum with Niacinamide for Spots & Scars,blume-box,Skin Care,47.0,1,0,66.7,High Risk - Deep Discount
+Superbalm Tripeptide-1 Lip Tint in Bubblegum,blume-box,Skin Care,20.0,0,0,,Healthy
+Sunburst Mineral SPF 50 Sunscreen,blume-box,Skin Care,70.0,1,0,56.2,High Risk - Deep Discount
+Superbalm Tripeptide-1 Vanilla Lip Balm,blume-box,Skin Care,20.0,0,0,,Healthy
+Superbalm Duo: Vanilla & Toffee,Blume,Bundle,36.0,1,0,10.0,Watch - On Sale
+Superbalm Tripeptide-1 Lip Tint in Toffee,blume-box,Skin Care,20.0,0,0,,Healthy
+Meltdown Gel Cream with Ceramides,blume-box,Skin Care,28.0,1,0,83.3,High Risk - Deep Discount
+Superbalm Tripeptide-1 Vanilla Lip Balm,blume-box,Skin Care,20.0,0,0,,Healthy
+Cloud 9 Cramp Oil,blume-box,Skin Care Rollers,20.0,0,0,,Healthy
+Sunburst Mineral SPF 50 Sunscreen,blume-box,Skin Care,40.0,0,0,,Healthy
+Clear Skin Kit: Acne Essentials,Blume,Bundle,75.0,1,0,43.2,Watch - On Sale
+Meltdown Daily Balancing Gel Cleanser,blume-box,Skin Care,32.0,0,0,,Healthy
+Blume Babies: Travel Size Kit,Blume,Bundle,29.4,1,0,47.5,Watch - On Sale
+Treat & Hydrate Kit,Blume,Bundle,45.0,1,0,22.4,Watch - On Sale
+Meltdown Gel Cream with Ceramides,blume-box,Skin Care,28.0,0,0,,Healthy
