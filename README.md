@@ -1,7 +1,7 @@
 # Blume Catalog Health Review
 ### Pricing, Inventory & Portfolio Risk Assessment — Business Analytics Capstone
 
-A end-to-end business analytics project analyzing a **live catalog snapshot** of [Blume](https://meetblume.com) — a small, internationally-shipping Canadian skincare and wellness brand sold direct-to-consumer and through retail partners such as Ulta Beauty.
+An end-to-end business analytics project analyzing a **live catalog snapshot** of [Blume](https://meetblume.com) — a small, internationally-shipping Canadian skincare and wellness brand sold direct-to-consumer and through retail partners such as Ulta Beauty.
 
 The project uses **SQL Server, Python, Excel, and Power BI** to assess pricing strategy, inventory availability, and listing data quality across Blume's 34-product catalog, and concludes with a written business report and three prioritized, financially-quantified recommendations.
 
@@ -23,8 +23,8 @@ The project uses **SQL Server, Python, Excel, and Power BI** to assess pricing s
 | **5 products (15%) are duplicate listings** | Fragmenting sales and inventory data across multiple SKU records for the same item |
 | **Estimated financial impact (baseline 30 units/SKU/month)** | ~$73,800/yr recoverable from discount-rate alignment + ~$60,900/yr in bundle stockout exposure |
 
-![Risk Distribution](images/risk_distribution.png)
-![Vendor On-Sale Comparison](images/vendor_on_sale.png)
+![Risk Distribution](risk_distribution.png)
+![Vendor On-Sale Comparison](vendor_on_sale.png)
 
 ---
 
@@ -40,28 +40,21 @@ The project uses **SQL Server, Python, Excel, and Power BI** to assess pricing s
 
 ---
 
-## Repository Structure
+## Repository Contents
 
-```
-blume-catalog-health-review/
-├── README.md
-├── data/
-│   ├── blume_products_dataset.xlsx     # Raw 34-SKU catalog snapshot
-│   └── products_with_risk.csv          # Output of SQL Query 8 (risk classification)
-├── sql/
-│   └── analysis_queries.sql            # All 7 SQL queries, with findings as comments
-├── python/
-│   ├── blume_risk_analysis.ipynb       # EDA, 4 charts, bundle-dependency investigation
-│   └── images/                         # Exported chart PNGs
-├── excel/
-│   └── blume_markdown_exposure_model.xlsx   # Formula-driven scenario model
-├── powerbi/
-│   ├── blume_dashboard.pbix            # (add your .pbix file here)
-│   └── screenshots/                    # All 4 dashboard pages
-├── report/
-│   └── Blume_Catalog_Health_Review.pdf # Full 20-page written business report
-└── images/                             # Images used in this README
-```
+| File | Description |
+|---|---|
+| [`Blume_Catalog_Health_Review.pdf`](Blume_Catalog_Health_Review.pdf) | Full 20-page written business report — executive summary, methodology, findings, financial model, and recommendations |
+| [`blume_products_dataset.xlsx`](blume_products_dataset.xlsx) | Raw 34-SKU catalog snapshot, scraped live via Apify |
+| [`blume — live scraped data.sql`](<blume%20%E2%80%94%20live%20scraped%20data.sql>) | Raw scraped data, formatted for SQL Server import |
+| [`analysis_queries.sql`](analysis_queries.sql) | All 7 SQL diagnostic queries, with the business question and finding for each written as comments |
+| [`products_with_risk.csv`](products_with_risk.csv) | Output of the SQL risk-classification query — feeds the Python and Power BI work |
+| [`blume_risk_analysis.ipynb`](blume_risk_analysis.ipynb) | Python notebook — EDA, 4 visualizations, and the bundle-dependency investigation |
+| [`risk_distribution.png`](risk_distribution.png), [`discount_by_category.png`](discount_by_category.png), [`vendor_on_sale.png`](vendor_on_sale.png), [`price_vs_discount.png`](price_vs_discount.png) | Exported chart images from the Python notebook |
+| [`blume_markdown_exposure_model.xlsx`](blume_markdown_exposure_model.xlsx) | Formula-driven Excel "what-if" model for the revenue-recovery scenarios |
+| [`excel_model.png`](excel_model.png) | Screenshot of the Excel model |
+| [`blume.pbix`](blume.pbix) | Power BI dashboard source file |
+| [`page1_executive_summary.jpg`](page1_executive_summary.jpg), [`page2_pricing_discounts.jpg`](page2_pricing_discounts.jpg), [`page3_stockout_risk.jpg`](page3_stockout_risk.jpg), [`page4_recommendations.jpg`](page4_recommendations.jpg) | Screenshots of all 4 Power BI dashboard pages |
 
 ---
 
@@ -73,23 +66,23 @@ The original analysis plan assumed transactional/time-series data (e.g. year-ove
 - K-Means clustering was replaced with a **price-vs-discount scatter plot** colored by risk tier, since 34 rows / 2 vendors / 4 categories would not produce a meaningful cluster model.
 - The bundle-component dependency analysis used a **manually researched component map** (reviewed from Blume's product pages) rather than text-parsing, since product descriptions were not present in the scraped data.
 
-Full details are in the [written report](report/Blume_Catalog_Health_Review.pdf), Section 3 (Data & Methodology).
+Full details are in [`Blume_Catalog_Health_Review.pdf`](Blume_Catalog_Health_Review.pdf), Section 3 (Data & Methodology).
 
 ---
 
 ## The Dashboard
 
-![Dashboard Page 1](images/dashboard_page1.jpg)
+![Dashboard Page 1](dashboard_page1.jpg)
 
-The full 4-page interactive Power BI dashboard (Executive Summary, Pricing & Discounts, Stockout & Risk, and Recommendations & Revenue Recovery Scenario) is available in [`powerbi/screenshots/`](powerbi/screenshots/), with the source `.pbix` file included for anyone wanting to explore the live scenario slider.
+The full 4-page interactive Power BI dashboard (Executive Summary, Pricing & Discounts, Stockout & Risk, and Recommendations & Revenue Recovery Scenario) is shown above and in `page2_pricing_discounts.jpg` through `page4_recommendations.jpg`, with the source `blume.pbix` file included for anyone wanting to explore the live scenario slider.
 
 ---
 
 ## The Financial Model
 
-![Excel Model](images/excel_model.png)
+![Excel Model](excel_model.png)
 
-All values in the Excel model (except the three blue assumption cells) are **live formulas** linked to the raw data — changing the "units sold per month" assumption automatically recalculates every downstream figure. See [`excel/blume_markdown_exposure_model.xlsx`](excel/blume_markdown_exposure_model.xlsx).
+All values in the Excel model (except the three blue assumption cells) are **live formulas** linked to the raw data — changing the "units sold per month" assumption automatically recalculates every downstream figure. See [`blume_markdown_exposure_model.xlsx`](blume_markdown_exposure_model.xlsx).
 
 ---
 
@@ -99,7 +92,7 @@ All values in the Excel model (except the three blue assumption cells) are **liv
 2. **Review bundle pricing & inventory strategy** (High Priority) — cap bundle discounting closer to the standalone benchmark (23.8%) and add bundle-level stock monitoring, since stockouts were found to be independent of component availability.
 3. **Investigate the 83.3% discount tier** (Medium Priority) — confirm whether this reflects intentional clearance or a reference-price data issue.
 
-Full reasoning, expected impact, timelines, and owners for each recommendation are in the [written report](report/Blume_Catalog_Health_Review.pdf), Section 7.
+Full reasoning, expected impact, timelines, and owners for each recommendation are in [`Blume_Catalog_Health_Review.pdf`](Blume_Catalog_Health_Review.pdf), Section 7.
 
 ---
 
